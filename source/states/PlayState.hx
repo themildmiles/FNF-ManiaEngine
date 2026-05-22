@@ -2610,6 +2610,8 @@ class PlayState extends MusicBeatState
 				RecalculateRating(false);
 			}
 		}
+		
+		/*
 
 		var uiFolder:String = "";
 		var antialias:Bool = ClientPrefs.data.antialiasing;
@@ -2711,6 +2713,8 @@ class PlayState extends MusicBeatState
 			},
 			startDelay: Conductor.crochet * 0.002 / playbackRate
 		});
+		
+		*/
 	}
 
 	public var strumsBlocked:Array<Bool> = [];
