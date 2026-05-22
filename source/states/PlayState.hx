@@ -2590,6 +2590,9 @@ class PlayState extends MusicBeatState
 		if(!note.ratingDisabled) daRating.hits++;
 		note.rating = daRating.name;
 		score = daRating.score;
+		
+		if(!daRating.addToCombo)
+			combo = 0;
 
 		if(daRating.noteSplash && !note.noteSplashData.disabled)
 			spawnNoteSplashOnNote(note);
@@ -3108,7 +3111,6 @@ class PlayState extends MusicBeatState
 			if (!note.isSustainNote)
 			{
 				combo++;
-				if(combo > 9999) combo = 9999;
 				popUpScore(note);
 			}
 			var gainHealth:Bool = true; // prevent health gain, *if* sustains are treated as a singular note
