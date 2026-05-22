@@ -2579,7 +2579,12 @@ class PlayState extends MusicBeatState
 
 		var placement:Float = FlxG.width * 0.35;
 		var rating:FlxSprite = new FlxSprite();
-		var score:Int = 350;
+		var score:Int = 500;
+		var comboModifier:Float = 0;
+		var noteModifier:Float = 1;
+		
+		if(note.isSustainNote)
+			noteModifier = 0.1;
 
 		//tryna do MS based judgment due to popular demand
 		var daRating:Rating = Conductor.judgeNote(ratingsData, Math.abs(noteDiff) / playbackRate);
@@ -2593,12 +2598,14 @@ class PlayState extends MusicBeatState
 		
 		if(!daRating.addToCombo)
 			combo = 0;
+		
+		comboModifier = Math.min(0.01 * Math.floor(combo / 100), 0.1);
 
 		if(daRating.noteSplash && !note.noteSplashData.disabled)
 			spawnNoteSplashOnNote(note);
 
 		if(!cpuControlled) {
-			songScore += score;
+			songScore += score * (noteModifier + comboModifier);
 			if(!note.ratingDisabled)
 			{
 				songHits++;
