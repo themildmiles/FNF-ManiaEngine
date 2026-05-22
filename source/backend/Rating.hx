@@ -10,6 +10,7 @@ class Rating
 	public var ratingMod:Float = 1;
 	public var score:Int = 350;
 	public var noteSplash:Bool = true;
+	public var addToCombo:Bool = true;
 	public var hits:Int = 0;
 
 	public function new(name:String)
@@ -31,21 +32,22 @@ class Rating
 		var ratingsData:Array<Rating> = [new Rating('sick')]; //highest rating goes first
 
 		var rating:Rating = new Rating('good');
-		rating.ratingMod = 0.67;
+		rating.ratingMod = 0.7;
 		rating.score = 200;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
 
 		var rating:Rating = new Rating('bad');
-		rating.ratingMod = 0.34;
+		rating.ratingMod = 0.4;
 		rating.score = 100;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
 
 		var rating:Rating = new Rating('shit');
-		rating.ratingMod = 0;
+		rating.ratingMod = 0.1;
 		rating.score = 50;
 		rating.noteSplash = false;
+		rating.addToCombo = false;
 		ratingsData.push(rating);
 		return ratingsData;
 	}
