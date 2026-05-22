@@ -2596,7 +2596,7 @@ class PlayState extends MusicBeatState
 		if(!daRating.addToCombo)
 			combo = 0;
 		
-		comboModifier = Math.min(0.01 * Math.floor(combo / 100), 0.1);
+		comboModifier = 0.01 * Math.floor(combo / 100);
 
 		if(daRating.noteSplash && !note.noteSplashData.disabled)
 			spawnNoteSplashOnNote(note);
