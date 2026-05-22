@@ -2584,7 +2584,7 @@ class PlayState extends MusicBeatState
 		var noteModifier:Float = 1;
 
 		//tryna do MS based judgment due to popular demand
-		var daRating:Rating = Conductor.judgeNote(ratingsData, Math.abs(noteDiff) / playbackRate);
+		var daRating:Rating = note.isSustainNote ? Conductor.judgeNote(ratingsData, 0) : Conductor.judgeNote(ratingsData, Math.abs(noteDiff) / playbackRate);
 		if(!note.isSustainNote) hitErrorMeter.registerError(-noteDiff / playbackRate, daRating.name);
 
 		totalNotesHit += daRating.ratingMod;
