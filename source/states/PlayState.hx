@@ -2582,9 +2582,6 @@ class PlayState extends MusicBeatState
 		var score:Int = 500;
 		var comboModifier:Float = 0;
 		var noteModifier:Float = 1;
-		
-		if(note.isSustainNote)
-			noteModifier = 0.1;
 
 		//tryna do MS based judgment due to popular demand
 		var daRating:Rating = Conductor.judgeNote(ratingsData, Math.abs(noteDiff) / playbackRate);
