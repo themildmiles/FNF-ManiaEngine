@@ -8,7 +8,7 @@ class Rating
 	public var image:String = '';
 	public var hitWindow:Null<Float> = 0.0; //ms
 	public var ratingMod:Float = 1;
-	public var score:Int = 350;
+	public var score:Int = 500;
 	public var noteSplash:Bool = true;
 	public var addToCombo:Bool = true;
 	public var hits:Int = 0;
@@ -33,13 +33,13 @@ class Rating
 
 		var rating:Rating = new Rating('good');
 		rating.ratingMod = 0.7;
-		rating.score = 200;
+		rating.score = 350;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
 
 		var rating:Rating = new Rating('bad');
 		rating.ratingMod = 0.4;
-		rating.score = 100;
+		rating.score = 200;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
 
